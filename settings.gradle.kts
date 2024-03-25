@@ -158,6 +158,7 @@ include(":extensions:control-plane:api:control-plane-api")
 include(":extensions:control-plane:api:control-plane-api-client")
 include(":extensions:control-plane:api:management-api")
 include(":extensions:control-plane:api:management-api:asset-api")
+include(":extensions:control-plane:api:management-api:secret-api")
 include(":extensions:control-plane:api:management-api:catalog-api")
 include(":extensions:control-plane:api:management-api:contract-agreement-api")
 include(":extensions:control-plane:api:management-api:contract-definition-api")
@@ -273,3 +274,9 @@ include(":system-tests:telemetry:telemetry-test-runner")
 include(":system-tests:telemetry:telemetry-test-runtime")
 
 include(":version-catalog")
+include("core:control-plane:secret-spi1")
+findProject(":core:control-plane:secret-spi1")?.name = "secret-spi1"
+include("spi:control-plane:secret-spi")
+findProject(":spi:control-plane:secret-spi")?.name = "secret-spi"
+include("spi:control-plane:secret-spi")
+findProject(":spi:control-plane:secret-spi")?.name = "secret-spi"
